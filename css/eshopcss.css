@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-size: 15px;
+}
+.header{
+    padding: 10px;
+    background: dodgerblue;
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+.control{
+    width: 15%;
+    background: whitesmoke;
+    display: inline-block;
+    padding: 10px 5px;
+}
+.menu{
+    position: relative;
+}
+.menu div{
+    background: whitesmoke;
+    position: relative;
+    text-align: left;
+    padding: 10px;
+    transition: all 1s ease-in;
+}
+.menu div:hover{
+    margin-left: 10px;
+    left: 15px;
+    background: grey;
+}
