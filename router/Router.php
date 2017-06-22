@@ -1,17 +1,13 @@
 <?php
 require_once "controllers/UserController.php";
+function RouterPage($controller, $url){
+    $view= new $controller();
+    $view->$url();
+}
 if (isset($_GET['page'])){
     $page = $_GET['page'];
-    if($page === 'ListUser'){
-        $view= new UserController();
-        $view->ListUser();
-    }
-    if($page === 'AddUser'){
-
-    }
-
+    RouterPage("UserController",$page);
 }else{
-    $view= new UserController();
-    $view->ListUser();
+    RouterPage("UserController","ListUser");
 }
 ?>

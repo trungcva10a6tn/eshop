@@ -9,6 +9,10 @@ class UserController extends Controller{
         $this->view("user/ListUser",$data);
     }
     function AddUser(){
-
+        $this->view("header");
+        $this->view("user/AddUser");
+    }
+    function __call($method, $params){
+        $this->view("erro_404");
     }
 }

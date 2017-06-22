@@ -4,29 +4,115 @@ body{
     font-size: 15px;
 }
 .header{
+    cursor: pointer;
     padding: 10px;
     background: dodgerblue;
     color: whitesmoke;
     font-size: 1.5em;
 }
 .control{
-    width: 15%;
+    box-sizing: border-box;
+    width: 200px;
     background: whitesmoke;
-    display: inline-block;
-    padding: 10px 5px;
+    float: left;
 }
 .menu{
     position: relative;
 }
 .menu div{
+    cursor: pointer;
     background: whitesmoke;
     position: relative;
     text-align: left;
+    font-size: 1.05em;
     padding: 10px;
-    transition: all 1s ease-in;
+    margin: 5px 0px;
+    transition: margin-left 1s ease-in, color 1s ease-in, background 1s ease-in, left 1s ease-in;
 }
-.menu div:hover{
+.menu>div:hover{
     margin-left: 10px;
-    left: 15px;
+    left: 10px;
+    color: white;
     background: grey;
+}
+/*Thiết lập dạng bảng*/
+.list_user, .add_user{
+    margin-left: 10px;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 200px - 10px);
+}
+.search{
+    margin: 10px 0px;
+}
+.header_conten{
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 5px;
+    background: deepskyblue ;
+}
+.bnt_add{
+    cursor: pointer;
+    border: none;
+    margin: 5px;
+    padding: 5px 10px;
+
+}
+.content {
+    box-sizing: border-box;
+}
+.content>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.content th {
+    padding: 10px 0px;
+    background: gainsboro;
+}
+.content th:hover{
+    text-decoration: underline;
+}
+.content td {
+    text-align: center;
+    padding: 10px 0px;
+    border-bottom: 1px solid darkgray;
+}
+.content tr:hover >td {
+    text-decoration: underline;
+}
+
+/*css thêm các input mới*/
+fieldset{
+    margin: 20px 0px;
+    display: inline-block;
+}
+.new_input{
+    margin: 10px;
+    overflow: auto;
+}
+.new_input>input{
+    width: 300px;
+    border: 1px solid white;
+    border-bottom-color: cadetblue;
+    outline: none;
+    margin: 0px 10px;
+    float: right;
+}
+.new_input>select{
+    outline: none;
+    margin: 0px 5px;
+    float: right;
+    border: none;
+    background: white;
+}
+.new_input>label{
+    float: left;
+}
+fieldset>button{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px 15px;
+    float: right;
+    background: olivedrab;
 }

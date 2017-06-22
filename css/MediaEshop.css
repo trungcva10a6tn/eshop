@@ -1,0 +1,8 @@
+@media screen and (max-width: 1200px) {
+    .content {
+        overflow-x: scroll;
+    }
+    .content>table {
+        width: 1200px;
+    }
+}
