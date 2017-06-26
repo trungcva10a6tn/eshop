@@ -36,7 +36,7 @@
                         <?= $row["admin"] == 2 ? "Nhân Viên":""?>
                         <?= $row["admin"] == 3 ? "Khác Hàng":""?>
                     </td>
-                    <td><a href="">Sửa</a> <a href="">Xóa</a></td>
+                    <td><a href="?page=sua-thanh-vien&id=<?=$row["id_user"]?>">Sửa</a> <a href="">Xóa</a></td>
                 </tr>
                 <?php
             }

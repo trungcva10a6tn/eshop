@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/MediaEshop.css">
 </head>
 <body>
-<div class="header" onclick="location.href='?page=listUser'">
+<div class="header" onclick="location.href='?page=thanh-vien'">
     TRANG QUẢN LÝ
 </div>
 <div class="control">

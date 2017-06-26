@@ -15,6 +15,9 @@ if (isset($_GET['page'])){
         case "them-thanh-vien":
             $action="addUser";
             break;
+        case "sua-thanh-vien":
+            $action="editUser";
+            break;
         default :
             $action=$page;
             break;
