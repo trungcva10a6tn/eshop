@@ -1,8 +1,6 @@
 <?php
 class Controller {
-    public function view ($url="",$data_in=null,$data_erros=null){
-        $data_erro=$data_erros;
-        $data=$data_in;
+    public function view ($url="",$data=null,$data_erro=null){
         include "views/".$url.".php";
     }
 }

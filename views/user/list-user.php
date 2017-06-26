@@ -1,4 +1,3 @@
-
 <div class="list_user">
     <div class="search">
         <form>
@@ -8,7 +7,7 @@
     </div>
     <div class="header_conten">Quản Lý User</div>
     <div class="content">
-        <button class="bnt_add" onclick="location.href='?page=AddUser'">Thêm Thành Viên</button>
+        <button class="bnt_add" onclick="location.href='?page=them-thanh-vien'">Thêm Thành Viên</button>
         <table>
             <tr>
                 <th><input type="checkbox"></th>

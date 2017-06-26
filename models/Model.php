@@ -31,37 +31,39 @@ class Model {
         }
         return $list;
     }
-    public function where($table,$id){
-        $query = "SELECT * FROM $table WHERE id_book=$id";
+    public function where($table,$data=array()){
+        $string="";
+        $stt=0;
+        foreach ($data as $key=>$value){
+            $string.= $stt==0 ? $key."= '".$value."'" : ", ".$key."= '".$value."'";
+            $stt+=1;
+        }
+        $query = "SELECT * FROM $table WHERE $string";
         $db = $this->connectdb();
         $db = $db->query($query);
         return $db;
     }
-    public function add($data){
-        $data_full="'null'";
-        foreach ($data as $row=>$value){
-            if ($row !=="ok"){
-                $data_full.=",'$value'";
-            }
+    public function add($table,$data){
+        $colum="";
+        $string="";
+        $stt=0;
+        foreach ($data as $key=>$value){
+            $colum.= $stt==0 ?  "'".$key."'":", ". "'".$key."'";
+            $string.= $stt==0 ? "'".$value."'" : ", "."'".$value."'";
+            $stt+=1;
         }
-        $query = "INSERT INTO book VALUES ($data_full)";
-        echo $query;
-        $db = $this->connectdb();
-        $db->exec($query);
+        $query = "INSERT INTO $table($colum) VALUES ($string)";
+        //$db = $this->connectdb();
+       // $db->exec($query);
     }
     public function edit($data,$id){
-        $data_full="";
-        foreach ($data as $row=>$value){
-            if ($row !== "ok"){
-                if ($row !== "category_id"){
-                    $data_full.="$row = '$value',";
-                }else{
-                    $data_full.=" $row = '$value'";
-                }
-
-            }
+        $string="";
+        $stt=0;
+        foreach ($data as $key=>$value){
+            $string.= $stt==0 ? $key."= '".$value."'" : ", ".$key."= '".$value."'";
+            $stt+=1;
         }
-        $query = "UPDATE book SET $data_full WHERE id_book = $id";
+        $query = "UPDATE book SET $string WHERE id_book = $id";
         echo $query;
         $db = $this->connectdb();
         $db->exec($query);

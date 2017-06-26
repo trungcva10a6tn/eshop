@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/MediaEshop.css">
 </head>
 <body>
-<div class="header" onclick="location.href='?page=ListUser'">
+<div class="header" onclick="location.href='?page=listUser'">
     TRANG QUẢN LÝ
 </div>
 <div class="control">
@@ -22,9 +22,10 @@
         </div>
     </div>
     <div class="menu">
-        <div onclick="location.href='?page=ListUser'"><b>Quản Lý Users</b></div>
-        <div onclick="location.href='?page=ListUser'"><b>Quản Lý Sản Phẩm</b></div>
-        <div onclick="location.href='?page=ListUser'"><b>Quản Lý hóa đơn</b></div>
+        <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Users</b></div>
+        <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Sản Phẩm</b></div>
+        <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Hóa Đơn</b></div>
+        <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Hãng</b></div>
     </div>
 </div>
 </body>
