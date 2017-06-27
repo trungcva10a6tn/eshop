@@ -21,24 +21,29 @@
                 <th>Tác Vụ</th>
             </tr>
             <?php
-            foreach ($data as $row){
-             ?>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td><?= $row["id_user"] ?></td>
-                    <td><?= $row["user_name"] ?></td>
-                    <td><?= $row["full_name"] ?></td>
-                    <td><?= $row["address"] ?></td>
-                    <td><?= $row["email"] ?></td>
-                    <td><?= $row["phone"] ?></td>
-                    <td>
-                        <?= $row["admin"] == 1 ? "Quản Trị Viên":""?>
-                        <?= $row["admin"] == 2 ? "Nhân Viên":""?>
-                        <?= $row["admin"] == 3 ? "Khác Hàng":""?>
-                    </td>
-                    <td><a href="?page=sua-thanh-vien&id=<?=$row["id_user"]?>">Sửa</a> <a href="">Xóa</a></td>
-                </tr>
-                <?php
+            if($data != "") {
+                foreach ($data as $index => $row) {
+                    ?>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><?= $index+1 ?></td>
+                        <td><?= $row["user_name"] ?></td>
+                        <td><?= $row["full_name"] ?></td>
+                        <td><?= $row["address"] ?></td>
+                        <td><?= $row["email"] ?></td>
+                        <td><?= $row["phone"] ?></td>
+                        <td>
+                            <?= $row["admin"] == 1 ? "Quản Trị Viên" : "" ?>
+                            <?= $row["admin"] == 2 ? "Nhân Viên" : "" ?>
+                            <?= $row["admin"] == 3 ? "Khác Hàng" : "" ?>
+                        </td>
+                        <td>
+                            <a href="?page=sua-thanh-vien&id=<?= $row["id"] ?>">Sửa</a>
+                            <a href="?page=xoa-thanh-vien&id=<?= $row["id"] ?>">Xóa</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
             }
             ?>
         </table>

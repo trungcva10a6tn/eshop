@@ -18,6 +18,9 @@ if (isset($_GET['page'])){
         case "sua-thanh-vien":
             $action="editUser";
             break;
+        case "xoa-thanh-vien":
+            $action="deleteUser";
+            break;
         default :
             $action=$page;
             break;
