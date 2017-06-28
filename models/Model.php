@@ -1,8 +1,8 @@
 <?php
 class Model {
-    private $url = "mysql:host=localhost;dbname=eshopdb;charset=utf8";
+    private $url = "mysql:host=localhost;dbname=e_shop;charset=utf8";
     private $user = "root";
-    private $pas = "";
+    private $pas = "123456";
     private function connectdb(){
         $db = new PDO($this->url, $this->user, $this->pas);
         return $db;
