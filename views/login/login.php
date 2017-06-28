@@ -11,17 +11,22 @@
 </head>
 <body>
     <div class="login">
+        <div class="logo">
+            <div>
+                <div><b>E-SHOP</b></div>
+            </div>
+        </div>
         <form method="post">
             <h2>LOGIN</h2>
-            <div>
-                <label><i class="fa fa-user fa-lg" aria-hidden="true"></i></label><input type="text" name="user_name" placeholder="User Name">
+            <div class="login-input">
+                <label><i class="fa fa-user fa-lg" aria-hidden="true"></i></label><input type="text" name="user_name" placeholder="User Name" value="<?=$data["user_name"]?>">
             </div>
-            <div>
+            <div class="login-input">
                 <label><i class="fa fa-unlock-alt fa-lg" aria-hidden="true"></i></label><input type="password" name="password" placeholder="password">
             </div>
-            <button type="submit" name="login_new">Đăng Nhập</button>
+            <button type="submit" name="login_new">ĐĂNG NHẬP</button>
         </form>
-        <button onclick="location.href='?page=dang-ky'">Đăng Ký</button>
+        <button onclick="location.href='?page=dang-ky'">ĐĂNG KÝ</button>
     </div>
 </body>
 </html>

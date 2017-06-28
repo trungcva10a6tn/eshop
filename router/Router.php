@@ -7,7 +7,7 @@ function RouterPage($controller, $url) {
 }
 
 session_start();
-if (!isset($_SESSION["user"])) {
+if (isset($_SESSION["user"])) {
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         $used_controller = "UserController";

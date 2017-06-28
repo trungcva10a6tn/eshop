@@ -8,10 +8,8 @@ class UserModel extends Model {
         }
         if(isset($options['range'])){
 
-        }
-        $db=$this->getdb($db);*/
-
-
+        }*/
+        $db=$this->getdb($db);
         return $db;
     }
     function getIdUser($id){
