@@ -20,7 +20,7 @@ class ProductModel extends Model
     function addProduct($data){
         $this->add("products",$data);
     }
-    function editProducts($data){
-        $this->edit("products",array("id"=>$_GET["id"]));
+    function editProduct($data){
+        $this->edit("products",$data, array("id"=>$_GET["id"]));
     }
 }

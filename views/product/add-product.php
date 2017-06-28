@@ -44,7 +44,7 @@
             </div>
             <div class="new_input">
                 <label>Nhà Sản Xuất: </label>
-                <select name="admin">
+                <select name="id_produces">
                     <?php
                     foreach ($data as $row){
                         ?>
@@ -54,7 +54,7 @@
                     ?>
 </select>
 </div>
-<button type="submit" name="sen_add"><?= $_GET["page"]=="sua-thanh-vien"?"Cập Nhật":"Thêm"?></button>
+<button type="submit" name="sen_add"><?= $_GET["page"]=="sua-san-pham"?"Cập Nhật":"Thêm"?></button>
 </fieldset>
 </form>
 </div>

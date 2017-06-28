@@ -14,11 +14,8 @@
                 <th>STT</th>
                 <th>Tên Sản Phẩm</th>
                 <th>Màn Hình</th>
-                <th>Hệ Điều Hành</th>
                 <th>CPU</th>
                 <th>RAM</th>
-                <th>Bộ Nhớ</th>
-                <th>Sim</th>
                 <th>Pin</th>
                 <th>Giá</th>
                 <th>Lượt xem</th>
@@ -33,16 +30,13 @@
                     <td><?= $row["id"] ?></td>
                     <td><?= $row["name_product"] ?></td>
                     <td><?= $row["screen"] ?></td>
-                    <td><?= $row["operating_system"] ?></td>
                     <td><?= $row["CPU"] ?></td>
                     <td><?= $row["RAM"] ?></td>
-                    <td><?= $row["memory"] ?></td>
-                    <td><?= $row["sim"] ?></td>
                     <td><?= $row["pin"] ?></td>
                     <td><?= $row["price"] ?></td>
                     <td><?= $row["view"] ?></td>
                     <td><?= $row["id_produces"] ?></td>
-                    <td><a href="?page=sua-thanh-vien&id=<?=$row["id"]?>">Sửa</a> <a href="">Xóa</a></td>
+                    <td><a href="?page=sua-san-pham&id=<?=$row["id"]?>">Sửa</a> <a href="">Xóa</a></td>
                 </tr>
                 <?php
             }

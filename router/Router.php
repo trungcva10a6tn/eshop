@@ -26,6 +26,10 @@ if (isset($_GET['page'])){
             $used_controller="ProductController";
             $action="addProduct";
             break;
+        case "sua-san-pham":
+            $used_controller="ProductController";
+            $action="editProduct";
+            break;
         default :
             $action=$page;
             break;
