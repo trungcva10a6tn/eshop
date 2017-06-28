@@ -3,7 +3,7 @@ require_once "models/UserModel.php";
 require_once "Controller.php";
 class UserController extends Controller{
     function listUser(){
-        $data=$this->db();
+        $data=$this->db("UserModel");
         $data=$data->listUserdb();
         $this->view("header");
         $this->view("user/list-user",$data);
@@ -14,14 +14,14 @@ class UserController extends Controller{
                 $data="";
                 $data=array(
                     "user_name"=>$_POST["user_name"],
-                    "password"=>$_POST["password_2"],
+                    "password"=>md5(md5($_POST["user_name"]).md5($_POST["password_2"])),
                     "full_name"=>$_POST["full_name"],
                     "address"=>$_POST["address"],
                     "email"=>$_POST["email"],
                     "phone"=>$_POST["phone"],
                     "admin"=>$_POST["admin"]
                 );
-                $db=$this->db();
+                $db=$this->db("UserModel");
                 $db->addUser($data);
                header('Location: ?page=thanh-vien');
             }
@@ -35,36 +35,56 @@ class UserController extends Controller{
                 $data="";
                 $data=array(
                     "user_name"=>$_POST["user_name"],
-                    "password"=>$_POST["password_2"],
+                    "password"=>strlen($_POST["password_2"])>0?md5(md5($_POST["user_name"]).md5($_POST["password_2"])):"",
                     "full_name"=>$_POST["full_name"],
                     "address"=>$_POST["address"],
                     "email"=>$_POST["email"],
                     "phone"=>$_POST["phone"],
                     "admin"=>$_POST["admin"]
                 );
-                $db=$this->db();
+                $db=$this->db("UserModel");
                 $db->editUser($data);
                header('Location: ?page=thanh-vien');
             }
         }else{
             $data_user="";
-            $data_user=$this->db();
+            $data_user=$this->db("UserModel");
             $data_user= $data_user->getIdUser($_GET["id"]);
             $data_user=$data_user[0];
         }
         $this->view("header");
         $this->view("user/add-user",isset($data_user)?$data_user:null, isset($_POST["sen_add"])? $_POST: null);
     }
+    function deleteUser(){
+        if (isset($_POST["delete"])){
+            $data=array(
+                "delete_user"=>0
+            );
+            $db=$this->db("UserModel");
+            $db->editUser($data);
+            header('Location: ?page=thanh-vien');
+        }
+        $data_user="";
+        $data_user=$this->db("UserModel");
+        $data_user= $data_user->getIdUser($_GET["id"]);
+        $data_user=$data_user[0];
+        $this->view("header");
+        $this->view("user/delete-user",$data_user);
+    }
     function checkData($data){
        if (!preg_match("/^[a-zA-Z]{1}\w{1,}$/", $data['user_name']) || strlen($data['user_name']) < 5){
            echo "lỗi tên";
             return false;
        }
-       if ($data['password_1'] !== $data['password_2'] || strlen($data['password_1']) < 5 ){
-           echo "lỗi pass";
-            return false;
+       if (strlen($data['password_1']) === 0 && strlen($data['password_1']) === 0 && $_GET["page"] == "sua-thanh-vien"){
+
+       }else{
+           if ($data['password_1'] !== $data['password_2'] || strlen($data['password_1']) < 5 ){
+               echo "lỗi pass";
+               return false;
+           }
        }
-        if ( strlen($data['full_name']) < 5 ){
+       if ( strlen($data['full_name']) < 5 ){
             return false;
         }
         if (!preg_match("/^[a-zA-Z]{1}\w{1,}@\w{3,5}\.\w{3,5}$/", $data['email']) || strlen($data['email']) < 10){

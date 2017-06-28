@@ -61,7 +61,9 @@ class Model {
         $where_update="";
         $stt2=0;
         foreach ($where as $key=>$value){
-            $where_update.= $stt2==0 ? $key."='".$value."'" : ",".$key."='".$value."'";
+            if ($value !== ""){
+                $where_update.= $stt2==0 ? $key."='".$value."'" : ",".$key."='".$value."'";
+            }
             $stt2+=1;
         }
         $string="";

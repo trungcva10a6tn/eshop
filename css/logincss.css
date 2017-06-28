@@ -1,0 +1,18 @@
+body{
+    background: url("../background/bbb.jpg");
+    background-size: cover;
+    color: white;
+}
+.login{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    margin: 0px 40%;
+}
+.login>div{
+    position: relative;
+    width: 100%;
+}
+.login>div>label{
+    
+}
