@@ -3,7 +3,7 @@ require_once "models/UserModel.php";
 require_once "Controller.php";
 class UserController extends Controller{
     function listUser(){
-        $data=$this->db();
+        $data=$this->db("UserModel");
         $data=$data->listUserdb();
         $this->view("header");
         $this->view("user/list-user",$data);
@@ -21,7 +21,7 @@ class UserController extends Controller{
                     "phone"=>$_POST["phone"],
                     "admin"=>$_POST["admin"]
                 );
-                $db=$this->db();
+                $db=$this->db("UserModel");
                 $db->addUser($data);
                header('Location: ?page=thanh-vien');
             }
@@ -42,13 +42,13 @@ class UserController extends Controller{
                     "phone"=>$_POST["phone"],
                     "admin"=>$_POST["admin"]
                 );
-                $db=$this->db();
+                $db=$this->db("UserModel");
                 $db->editUser($data);
                header('Location: ?page=thanh-vien');
             }
         }else{
             $data_user="";
-            $data_user=$this->db();
+            $data_user=$this->db("UserModel");
             $data_user= $data_user->getIdUser($_GET["id"]);
             $data_user=$data_user[0];
         }
@@ -60,12 +60,12 @@ class UserController extends Controller{
             $data=array(
                 "delete_user"=>0
             );
-            $db=$this->db();
+            $db=$this->db("UserModel");
             $db->editUser($data);
             header('Location: ?page=thanh-vien');
         }
         $data_user="";
-        $data_user=$this->db();
+        $data_user=$this->db("UserModel");
         $data_user= $data_user->getIdUser($_GET["id"]);
         $data_user=$data_user[0];
         $this->view("header");

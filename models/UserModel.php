@@ -15,7 +15,7 @@ class UserModel extends Model {
         return $db;
     }
     function getIdUser($id){
-        $db=$this->where("users",array("id_user"=>$id));
+        $db=$this->where("users",array("id"=>$id));
         $db=$this->getdb($db);
         return $db;
     }

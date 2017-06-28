@@ -7,7 +7,7 @@
     </div>
     <div class="header_conten">Quản Lý User</div>
     <div class="content">
-        <button class="bnt_add" onclick="location.href='?page=them-thanh-vien'">Thêm Thành Viên</button>
+        <button class="bnt_add" onclick="location.href = '?page=them-thanh-vien'">Thêm Thành Viên</button>
         <table>
             <tr>
                 <th><input type="checkbox"></th>
@@ -21,12 +21,12 @@
                 <th>Tác Vụ</th>
             </tr>
             <?php
-            if($data != "") {
+            if ($data != "") {
                 foreach ($data as $index => $row) {
                     ?>
                     <tr>
                         <td><input type="checkbox"></td>
-                        <td><?= $index+1 ?></td>
+                        <td><?= $index + 1 ?></td>
                         <td><?= $row["user_name"] ?></td>
                         <td><?= $row["full_name"] ?></td>
                         <td><?= $row["address"] ?></td>
@@ -47,5 +47,6 @@
             }
             ?>
         </table>
+        <button class="bnt_add" onclick="location.href = '?page=them-thanh-vien'">Xóa</button>
     </div>
 </div>
