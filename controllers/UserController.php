@@ -79,7 +79,7 @@ class UserController extends Controller{
        if (strlen($data['password_1']) === 0 && strlen($data['password_1']) === 0 && $_GET["page"] == "sua-thanh-vien"){
 
        }else{
-           if ($data['password_1'] !== $data['password_2'] || strlen($data['password_1']) < 5 ){
+           if ($data['password_1'] !== $data['password_2'] || !preg_match("/^.{5,}$/", $data['password_1'])){
                echo "lỗi pass";
                return false;
            }
