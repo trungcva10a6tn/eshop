@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3125d85-6efa-4944-8d0c-cdaab6aaab50" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/logincss.css" afterPath="$PROJECT_DIR$/css/logincss.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login/login.php" afterPath="$PROJECT_DIR$/views/login/login.php" />
-    </list>
+    <list default="true" id="a3125d85-6efa-4944-8d0c-cdaab6aaab50" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,8 +130,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="238" />
-    <option name="y" value="373" />
+    <option name="x" value="283" />
+    <option name="y" value="43" />
     <option name="width" value="1475" />
     <option name="height" value="993" />
   </component>
@@ -474,15 +469,15 @@
       <workItem from="1498536876312" duration="1886000" />
       <workItem from="1498547683184" duration="1238000" />
       <workItem from="1498553488348" duration="5782000" />
-      <workItem from="1498636653850" duration="1997000" />
+      <workItem from="1498636653850" duration="2119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107595000" />
+    <option name="totallyTimeSpent" value="107717000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="238" y="373" width="1475" height="993" extended-state="0" />
+    <frame x="283" y="43" width="1475" height="993" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2359322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -736,14 +731,14 @@
         <state relative-caret-position="1125">
           <caret line="75" column="33" lean-forward="false" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
           <folding>
-            <marker date="1498557632000" expanded="true" signature="319:333" ph="SELECT * FRO... ${$table}" />
-            <marker date="1498557632000" expanded="true" signature="501:587" ph="SELECT * FRO... ${$table}" />
-            <marker date="1498557632000" expanded="true" signature="1293:1319" ph="SELECT * FRO... ${$table}" />
-            <marker date="1498557632000" expanded="true" signature="1293:1320" ph="SELECT * FRO... ${$table}" />
-            <marker date="1498557632000" expanded="true" signature="1293:1321" ph="SELECT * FRO... ${$table}" />
-            <marker date="1498557632000" expanded="true" signature="1752:1796" ph="INSERT INTO book... " />
-            <marker date="1498557632000" expanded="true" signature="2425:2457" ph="UPDATE book " />
-            <marker date="1498557632000" expanded="true" signature="2594:2627" ph="DELETE FROM " />
+            <marker date="1498639888000" expanded="true" signature="319:333" ph="SELECT * FRO... ${$table}" />
+            <marker date="1498639888000" expanded="true" signature="501:587" ph="SELECT * FRO... ${$table}" />
+            <marker date="1498639888000" expanded="true" signature="1293:1319" ph="SELECT * FRO... ${$table}" />
+            <marker date="1498639888000" expanded="true" signature="1293:1320" ph="SELECT * FRO... ${$table}" />
+            <marker date="1498639888000" expanded="true" signature="1293:1321" ph="SELECT * FRO... ${$table}" />
+            <marker date="1498639888000" expanded="true" signature="1752:1796" ph="INSERT INTO book... " />
+            <marker date="1498639888000" expanded="true" signature="2425:2457" ph="UPDATE book " />
+            <marker date="1498639888000" expanded="true" signature="2594:2627" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -769,19 +764,19 @@
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="30" />
           <folding>
-            <marker date="1498625222000" expanded="true" signature="114:3924" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="139:164" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="2566:2746" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="2778:3844" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="2882:2943" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3065:3074" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3080:3259" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3177:3250" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3306:3341" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3457:3522" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3628:3693" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3752:3817" ph="..." />
-            <marker date="1498625222000" expanded="true" signature="3884:3922" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="114:3924" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="139:164" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="2566:2746" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="2778:3844" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="2882:2943" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3065:3074" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3080:3259" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3177:3250" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3306:3341" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3457:3522" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3628:3693" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3752:3817" ph="..." />
+            <marker date="1498639888000" expanded="true" signature="3884:3922" ph="..." />
           </folding>
         </state>
       </provider>
