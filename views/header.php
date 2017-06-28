@@ -23,7 +23,7 @@
     </div>
     <div class="menu">
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Users</b></div>
-        <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Sản Phẩm</b></div>
+        <div onclick="location.href='?page=san-pham'"><b>Quản Lý Sản Phẩm</b></div>
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Hóa Đơn</b></div>
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Hãng</b></div>
     </div>
