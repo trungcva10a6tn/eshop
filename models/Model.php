@@ -1,8 +1,6 @@
 <?php
-class Model {
-    private $url = "mysql:host=localhost;dbname=eshopdb;charset=utf8";
-    private $user = "root";
-    private $pas = "";
+require_once "Config.php";
+class Model extends Config {
     private function connectdb(){
         $db = new PDO($this->url, $this->user, $this->pas);
         return $db;
