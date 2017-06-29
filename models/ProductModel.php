@@ -13,7 +13,7 @@ class ProductModel extends Model
         return $db;
     }
     function getId($id){
-        $db = $this->where("product", array("id"=>$id));
+        $db = $this->where("products", array("id"=>$id));
         $db = $this->getdb($db);
         return $db;
     }

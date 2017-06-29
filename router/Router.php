@@ -7,7 +7,7 @@ function RouterPage($controller, $url) {
 }
 
 session_start();
-if (isset($_SESSION["user"])) {
+if (!isset($_SESSION["user"])) {
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         $used_controller = "UserController";
@@ -25,18 +25,22 @@ if (isset($_SESSION["user"])) {
             case "xoa-thanh-vien":
                 $action = "deleteUser";
                 break;
-  	    case "san-pham":
-               $used_controller="ProductController";
-	       $action="listAllProduct";
-		break;
-	    case "them-san-pham":
-	       $used_controller="ProductController";
-               $action="addProduct";
-	        break;
-	    case "sua-san-pham":
-	       $used_controller="ProductController";
-	       $action="editProduct";
-		 break;
+            case "san-pham":
+                $used_controller="ProductController";
+                $action="listAllProduct";
+                break;
+            case "them-san-pham":
+                $used_controller="ProductController";
+                $action="addProduct";
+                break;
+            case "sua-san-pham":
+                $used_controller="ProductController";
+                $action="editProduct";
+                break;
+            case "xoa-san-pham":
+                $used_controller="ProductController";
+                $action="deleteProduct";
+                break;
             default :
                 $action = $page;
                 break;

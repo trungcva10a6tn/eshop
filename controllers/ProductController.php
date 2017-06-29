@@ -16,7 +16,7 @@ class ProductController extends Controller
             if ($this->checkData($_POST)){
                 $data="";
                 $data=array(
-                    "name"=>$_POST["name"],
+                    "name_product"=>$_POST["name"],
                     "screen"=>$_POST["screen"],
                     "operating_system"=>$_POST["operating_system"],
                     "CPU"=>$_POST["CPU"],
@@ -28,15 +28,16 @@ class ProductController extends Controller
                     "view"=>$_POST["view"],
                     "id_produces"=>$_POST["id_produces"],
                 );
-                $db=$this->db();
+                $db=$this->db("ProductModel");
                 $db->addProduct($data);
-                header('Location: ?page=thanh-vien');
+                header('Location: ?page=san-pham');
             }
         }
         $dataProducess = $this->db("ProductModel");
         $dataProducess = $dataProducess->listProducess();
+        $datafull_product[1] = $dataProducess;
         $this->view("header");
-        $this->view("product/add-product",$dataProducess, isset($_POST["sen_add"])? $_POST: null);
+        $this->view("product/add-product",$datafull_product, isset($_POST["sen_add"])? $_POST: null);
     }
 
     function editProduct(){
@@ -44,7 +45,7 @@ class ProductController extends Controller
             if ($this->checkData($_POST)){
                 $data="";
                 $data=array(
-                    "name"=>$_POST["name"],
+                    "name_product"=>$_POST["name"],
                     "screen"=>$_POST["screen"],
                     "operating_system"=>$_POST["operating_system"],
                     "CPU"=>$_POST["CPU"],
@@ -61,13 +62,33 @@ class ProductController extends Controller
                 header('Location: ?page=san-pham');
             }
         }else{
-            $data_user="";
-            $data_user=$this->db("ProductModel");
-            $data_user= $data_user->getId($_GET["id"]);
-            $data_user=$data_user[0];
+            $data_product="";
+            $data_product=$this->db("ProductModel");
+            $data_product= $data_product->getId($_GET["id"]);
+            $data_product=$data_product[0];
+            $datafull_product[0] = $data_product;
+            $dataProducess = $this->db("ProductModel");
+            $dataProducess = $dataProducess->listProducess();
+            $datafull_product[1] = $dataProducess;
         }
         $this->view("header");
-        $this->view("product/add-product",isset($data_user)?$data_user:null, isset($_POST["sen_add"])? $_POST: null);
+        $this->view("product/add-product",isset($datafull_product)?$datafull_product:null, isset($_POST["sen_add"])? $_POST: null);
+    }
+    function deleteProduct(){
+        if (isset($_POST["delete"])){
+            $data=array(
+                "delete_product"=>0
+            );
+            $db=$this->db("ProductModel");
+            $db->editProduct($data);
+            header('Location: ?page=san-pham');
+        }
+        $data_product="";
+        $data_product=$this->db("ProductModel");
+        $data_product= $data_product->getId($_GET["id"]);
+        $data_product=$data_product[0];
+        $this->view("header");
+        $this->view("product/delete_product",$data_product);
     }
     function checkData($data){
         if (!preg_match("/^.{5,}$/", $data['name']) || strlen($data['name']) < 5){
