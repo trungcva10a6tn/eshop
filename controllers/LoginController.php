@@ -15,13 +15,19 @@ class LoginController extends Controller{
                 $db=$db->checkUser($data);
                 var_dump($db);
                 if ($db){
-
+                    $_SESSION["user"]=$db["user_name"];
+                    $_SESSION["admin"]=$db["admin"];
                 }else{
                     echo "tài khỏa không tồn tại";
                 }
             }
         }
         $this->view("login/login",isset($_POST["login_new"])?$_POST : null);
+    }
+    function logout(){
+        unset($_SESSION['user']);
+        unset($_SESSION['admin']);
+        header('Location: ?');
     }
     function checkData($data){
         if (!preg_match("/^[a-zA-Z]{1}\w{1,}$/", $data['user_name'])){
