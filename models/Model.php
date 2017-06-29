@@ -1,8 +1,6 @@
 <?php
-class Model {
-    private $url = "mysql:host=localhost;dbname=e_shop;charset=utf8";
-    private $user = "root";
-    private $pas = "123456";
+require_once "Config.php";
+class Model extends Config {
     private function connectdb(){
         $db = new PDO($this->url, $this->user, $this->pas);
         return $db;
@@ -35,10 +33,11 @@ class Model {
         $string="";
         $stt=0;
         foreach ($data as $key=>$value){
-            $string.= $stt==0 ? $key."='".$value."'" : ",".$key."='".$value."'";
+            $string.= $stt==0 ? $key."='".$value."'" : " AND ".$key."='".$value."'";
             $stt+=1;
         }
         $query = "SELECT * FROM $table WHERE $string";
+        echo $query;
         $db = $this->connectdb();
         $db = $db->query($query);
         return $db;
@@ -96,7 +95,6 @@ class Model {
                 $recos++;
             }
             return $list;
-
         }
     }
 }
