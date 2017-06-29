@@ -18,7 +18,7 @@
     <div class="admin_info">
         <img src="" alt="">
         <div>
-            <a href="">Log Out</a>
+            <a href="?page=logout">Log Out</a>
         </div>
     </div>
     <div class="menu">
