@@ -36,7 +36,7 @@
                     <td><?= $row["price"] ?></td>
                     <td><?= $row["view"] ?></td>
                     <td><?= $row["id_produces"] ?></td>
-                    <td><a href="?page=sua-san-pham&id=<?=$row["id"]?>">Sửa</a> <a href="">Xóa</a></td>
+                    <td><a href="?page=sua-san-pham&id=<?=$row["id"]?>">Sửa</a> <a href="?page=xoa-san-pham&id=<?=$row["id"]?>">Xóa</a></td>
                 </tr>
                 <?php
             }

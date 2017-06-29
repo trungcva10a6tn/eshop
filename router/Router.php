@@ -5,7 +5,7 @@ function RouterPage($controller, $url) {
     $view->$url();
 }
 session_start();
-if (isset($_SESSION["user"])) {
+if (!isset($_SESSION["user"])) {
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         $used_controller = "UserController";
@@ -38,6 +38,10 @@ if (isset($_SESSION["user"])) {
             case "sua-san-pham":
                 $used_controller="ProductController";
                 $action="editProduct";
+                break;
+            case "xoa-san-pham":
+                $used_controller="ProductController";
+                $action="deleteProduct";
                 break;
             default :
                 $action = $page;
