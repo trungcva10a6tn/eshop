@@ -91,7 +91,7 @@ class UserController extends Controller{
             echo "lỗi email";
             return false;
         }
-        if (!preg_match("/^[+84|0]{1,3}[0-9]{10,11}$/", $data['phone']) || strlen($data['phone']) < 10){
+        if (!preg_match("/^[+84|0]{1,3}[0-9]{9,11}$/", $data['phone']) || strlen($data['phone']) < 10){
             echo "lỗi phone";
             return false;
         }

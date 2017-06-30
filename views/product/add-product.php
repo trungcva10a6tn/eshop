@@ -1,7 +1,7 @@
 <div class="add_product">
     <form method="post">
         <fieldset>
-            <legend>Sửa Sản Phẩm</legend>
+            <legend><?= ($_GET['page'] == "sua-san-pham" ?"Sửa sản phẩm ": "Thêm sản phẩm")?></legend>
             <div class="new_input">
                 <label>Tên Sản Phẩm: </label>
                 <input type="text" name="name" value="<?= isset($data[0]["name_product"])?$data[0]["name_product"]:""?><?=isset($data_erro["name_product"])?$data_erro["name_product"]:""?>">
@@ -48,7 +48,7 @@
                     <?php
                     foreach ($data[1] as $row){
                         ?>
-                        <option value="<?= $row["id"]?>"><?= $row["name_produces"]?></option>
+                        <option <?=isset($data[0]["id_produces"])?(($data[0]["id_produces"] == $row["id"])?" selected ":""):""?> value="<?= $row["id"]?>"><?= $row["name_produces"]?></option>
                         <?php
                     }
                     ?>
