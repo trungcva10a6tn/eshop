@@ -21,7 +21,7 @@ class UserModel extends Model {
         $this->add("users",$data);
     }
     function editUser($data){
-        $this->edit("users",$data,array("id_user"=>$_GET["id"]));
+        $this->edit("users",$data,array("id"=>$_GET["id"]));
     }
 
 }

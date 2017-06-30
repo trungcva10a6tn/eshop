@@ -22,8 +22,9 @@ class UserController extends Controller{
                     "admin"=>$_POST["admin"]
                 );
                 $db=$this->db("UserModel");
+
                 $db->addUser($data);
-               header('Location: ?page=thanh-vien');
+                header('Location: ?page=thanh-vien');
             }
         }
         $this->view("header");
@@ -72,7 +73,7 @@ class UserController extends Controller{
         $this->view("user/delete-user",$data_user);
     }
     function checkData($data){
-       if (!preg_match("/^[a-zA-Z]{1}\w{1,}$/", $data['user_name']) || strlen($data['user_name']) < 5){
+       if (!preg_match("/^[a-zA-Z]\w{1,}$/", $data['user_name']) || strlen($data['user_name']) < 5){
            echo "lỗi tên";
             return false;
        }
