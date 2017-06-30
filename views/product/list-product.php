@@ -5,7 +5,7 @@
             <button>Tìm</button>
         </form>
     </div>
-    <div class="header_conten">Quản Lý User</div>
+    <div class="header_conten">Quản Lý Sản Phẩm</div>
     <div class="content">
         <button class="bnt_add" onclick="location.href='?page=them-san-pham'">Thêm Sản Phẩm</button>
         <table>
