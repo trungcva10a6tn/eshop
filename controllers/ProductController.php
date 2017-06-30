@@ -26,7 +26,7 @@ class ProductController extends Controller
                     "pin"=>$_POST["pin"],
                     "price"=>$_POST["price"],
                     "view"=>$_POST["view"],
-                    "id_produces"=>$_POST["id_produces"],
+                    "id_produces"=>$_POST["id_produces"]
                 );
                 $db=$this->db("ProductModel");
                 $db->addProduct($data);
@@ -55,7 +55,7 @@ class ProductController extends Controller
                     "pin"=>$_POST["pin"],
                     "price"=>$_POST["price"],
                     "view"=>$_POST["view"],
-                    "id_produces"=>$_POST["id_produces"],
+                    "id_produces"=>$_POST["id_produces"]
                 );
                 $db=$this->db("ProductModel");
                 $db->editProduct($data);
