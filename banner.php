@@ -40,6 +40,5 @@
         <img src="doremon.jpg" alt="">
     </div>
 </div>
-<?php include "modeldb.php";?>
 </body>
 </html>

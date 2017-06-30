@@ -5,14 +5,33 @@ function RouterPage($controller, $url) {
     $view->$url();
 }
 session_start();
-if (!isset($_SESSION["user"])) {
+if (isset($_SESSION["user"])) {
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
-        $used_controller = "UserController";
-        $action = "listUser";
+        $used_controller = "";
+        $action = "";
         switch ($page) {
             case "logout":
                 $used_controller = "LoginController";
+                break;
+            case "thanh-vien":
+            case "them-thanh-vien":
+            case "sua-thanh-vien":
+            case "xoa-thanh-vien":
+                $used_controller = "UserController";
+                break;
+            case "san-pham":
+            case "them-san-pham":
+            case "sua-san-pham":
+            case "xoa-san-pham":
+                $used_controller="ProductController";
+                break;
+            default :
+                $used_controller = "UserController";
+                break;
+        }
+        switch ($page) {
+            case "logout":
                 $action = "logout";
                 break;
             case "thanh-vien":
@@ -28,19 +47,15 @@ if (!isset($_SESSION["user"])) {
                 $action = "deleteUser";
                 break;
             case "san-pham":
-                $used_controller="ProductController";
                 $action="listAllProduct";
                 break;
             case "them-san-pham":
-                $used_controller="ProductController";
                 $action="addProduct";
                 break;
             case "sua-san-pham":
-                $used_controller="ProductController";
                 $action="editProduct";
                 break;
             case "xoa-san-pham":
-                $used_controller="ProductController";
                 $action="deleteProduct";
                 break;
             default :

@@ -37,7 +37,6 @@ class Model extends Config {
             $stt+=1;
         }
         $query = "SELECT * FROM $table WHERE $string";
-        echo $query;
         $db = $this->connectdb();
         $db = $db->query($query);
         return $db;
@@ -54,7 +53,6 @@ class Model extends Config {
         $query = "INSERT INTO $table ($colum) VALUES ($string)";
         $db = $this->connectdb();
         $db->exec($query);
-        echo $query;
     }
     protected function edit($table,$data,$where=array()){
         $where_update="";

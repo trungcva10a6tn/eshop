@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/logincss.css">
     <link rel="stylesheet" href="css/awesome/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="login">

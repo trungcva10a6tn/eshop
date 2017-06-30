@@ -13,10 +13,11 @@ class LoginController extends Controller{
                 );
                 $db=$this->db("LoginModel");
                 $db=$db->checkUser($data);
-                var_dump($db);
-                if ($db){
-                    $_SESSION["user"]=$db["user_name"];
-                    $_SESSION["admin"]=$db["admin"];
+
+                if ($db != ""){
+                    $_SESSION["user"]=$db[0]["user_name"];
+                    $_SESSION["admin"]=$db[0]["admin"];
+                    header('Location: ?');
                 }else{
                     echo "tài khỏa không tồn tại";
                 }
