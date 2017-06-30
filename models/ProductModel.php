@@ -3,7 +3,7 @@ require_once 'Model.php';
 class ProductModel extends Model
 {
     function ListProductdb(){
-        $db = $this->select("products");
+        $db = $this->where("products", array("delete_product"=>1));
         $db = $this->getdb($db);
         return $db;
     }
