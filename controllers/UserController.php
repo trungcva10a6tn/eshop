@@ -22,7 +22,6 @@ class UserController extends Controller{
                     "admin"=>$_POST["admin"]
                 );
                 $db=$this->db("UserModel");
-
                 $db->addUser($data);
                 header('Location: ?page=thanh-vien');
             }

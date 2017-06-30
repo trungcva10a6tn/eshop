@@ -26,6 +26,12 @@ if (isset($_SESSION["user"])) {
             case "xoa-san-pham":
                 $used_controller="ProductController";
                 break;
+            case "hang":
+            case "them-hang":
+            case "sua-hang":
+            case "xoa-hang":
+            $used_controller="ProducessController";
+            break;
             default :
                 $used_controller = "UserController";
                 break;
@@ -57,6 +63,18 @@ if (isset($_SESSION["user"])) {
                 break;
             case "xoa-san-pham":
                 $action="deleteProduct";
+                break;
+            case "hang":
+                $action="listProducess";
+                break;
+            case "them-hang":
+                $action="addProducess";
+                break;
+            case "sua-hang":
+                $action="editProducess";
+                break;
+            case "xoa-hang":
+                $action="deleteProducess";
                 break;
             default :
                 $action = $page;

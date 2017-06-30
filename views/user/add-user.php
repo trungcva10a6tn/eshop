@@ -1,7 +1,7 @@
 <div class="add_user">
     <form method="post">
         <fieldset>
-            <legend>Thêm Thành Viên</legend>
+            <legend><?= $_GET["page"]=="sua-thanh-vien"?"Cập Nhật Thành Viên":"Thêm Thành Viên"?></legend>
             <div class="new_input">
                 <label>Tên Đăng Nhập: </label>
                 <input type="text" name="user_name" value="<?= isset($data["user_name"])?$data["user_name"]:""?><?=isset($data_erro["user_name"])?$data_erro["user_name"]:""?>">
@@ -38,6 +38,7 @@
                     <option value="1" <?= isset($data["admin"]) ? $data["admin"] == 1 ? "selected" : "" : ""?><?= isset($data_erro["admin"]) ? $data_erro["admin"] == 1 ? "selected" : "" : ""?>>Quản Trị Viên.</option>
                 </select>
             </div>
+            <button type="button" onclick="location.href='?page=thanh-vien'">Thoát</button>
             <button type="submit" name="sen_add"><?= $_GET["page"]=="sua-thanh-vien"?"Cập Nhật":"Thêm"?></button>
         </fieldset>
     </form>
