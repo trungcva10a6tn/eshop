@@ -39,7 +39,7 @@ body{
 .list_user, .add_user{
     margin-left: 10px;
     box-sizing: border-box;
-    float: left;
+    float: right;
     width: calc(100% - 200px - 10px);
 }
 .search{

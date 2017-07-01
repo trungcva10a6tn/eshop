@@ -3,8 +3,13 @@ require_once "models/UserModel.php";
 require_once "Controller.php";
 class UserController extends Controller{
     function listUser(){
-        $data=$this->db("UserModel");
-        $data=$data->listUserdb();
+        if (isset($_POST["find-search"])){
+            $data=$this->db("UserModel");
+            $data=$data->getsearch();
+        }else{
+            $data=$this->db("UserModel");
+            $data=$data->listUserdb();
+        }
         $this->view("header");
         $this->view("user/list-user",$data);
     }
