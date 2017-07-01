@@ -1,8 +1,8 @@
 <div class="list_user">
     <div class="search">
-        <form>
-            <input type="text">
-            <button>Tìm</button>
+        <form method="post">
+            <input type="text" name="search" value="<?= isset($_POST["search"])?$_POST["search"]:""?>">
+            <button type="submit" name="find-search">Tìm</button>
         </form>
     </div>
     <div class="header_conten">Quản Lý User</div>

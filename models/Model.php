@@ -41,6 +41,18 @@ class Model extends Config {
         $db = $db->query($query);
         return $db;
     }
+    protected function like($table,$data=array()){
+        $string="";
+        $stt=0;
+        foreach ($data as $key=>$value){
+            $string.= $stt==0 ? $key."  ".$value : " OR ".$key."  ".$value;
+            $stt+=1;
+        }
+        $query = "SELECT * FROM $table WHERE $string";
+        $db = $this->connectdb();
+        $db = $db->query($query);
+        return $db;
+    }
     protected function add($table,$data=array()){
         $colum="";
         $string="";
