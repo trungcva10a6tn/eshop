@@ -8,7 +8,7 @@ class Model extends Config {
     protected function select($table){
         $query = "SELECT * FROM $table";
         $db = $this->connectdb();
-        $db = $db->query($query);
+        $db = $db->query($query, PDO::FETCH_ASSOC);
         return $db;
     }
     protected function join($table,$category){
@@ -38,7 +38,7 @@ class Model extends Config {
         }
         $query = "SELECT * FROM $table WHERE $string";
         $db = $this->connectdb();
-        $db = $db->query($query);
+        $db = $db->query($query, PDO::FETCH_ASSOC);
         return $db;
     }
     protected function add($table,$data=array()){
@@ -48,7 +48,7 @@ class Model extends Config {
         foreach ($data as $key=>$value){
             $colum.= $stt==0 ?  "`".$key."`":",". "`".$key."`";
             $string.= $stt==0 ? "'".$value."'" : ","."'".$value."'";
-            $stt+=1;
+            $stt++;
         }
         $query = "INSERT INTO $table ($colum) VALUES ($string)";
         $db = $this->connectdb();
@@ -73,24 +73,20 @@ class Model extends Config {
         $db = $this->connectdb();
         $db->exec($query);
     }
-    protected function delete($id){
-        $query = "DELETE FROM `book` WHERE id_book=$id";
+    protected function delete($table, $condition){
+        $conditionString = '';
+        foreach($condition as $key=>$value){
+            $conditionString = $key."=".$value;
+        }
+        $query = "DELETE FROM $table WHERE $conditionString";
         $db = $this->connectdb();
         $db->exec($query);
     }
     protected function getdb($data=null){
         if (!empty($data)){
             $list ="";
-            $recos=0;
             foreach ($data as $row){
-                $stt=0;
-                foreach ($row as $key=>$value){
-                    if($stt % 2===0){
-                        $list[$recos][$key]=$value;
-                    }
-                    $stt++;
-                }
-                $recos++;
+               $list[] = $row;
             }
             return $list;
         }

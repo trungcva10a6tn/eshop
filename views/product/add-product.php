@@ -52,10 +52,10 @@
                         <?php
                     }
                     ?>
-</select>
-</div>
-<button type="submit" name="sen_add"><?= $_GET["page"]=="sua-san-pham"?"Cập Nhật":"Thêm"?></button>
-</fieldset>
-</form>
+                </select>
+            </div>
+            <button type="submit" name="sen_add"><?= $_GET["page"]=="sua-san-pham"?"Cập Nhật":"Thêm"?></button>
+        </fieldset>
+    </form>
 </div>
 
