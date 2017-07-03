@@ -1,3 +1,4 @@
-/nbproject/private/
-.idea/workspace.xml
-/models/Config.php
+*.DS_Store
+models/Config.php
+nbproject/private/
+.idea/
