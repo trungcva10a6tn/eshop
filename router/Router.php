@@ -26,12 +26,23 @@ if (isset($_SESSION["user"])) {
             case "xoa-san-pham":
                 $used_controller="ProductController";
                 break;
+<<<<<<< HEAD
+            case "sale":
+            case "store-sale":
+            case "add-sale":
+            case "edit-sale":
+            case "update-sale":
+            case "delete-sale":
+                $used_controller="SaleController";
+                break;
+=======
             case "hang":
             case "them-hang":
             case "sua-hang":
             case "xoa-hang":
             $used_controller="ProducessController";
             break;
+>>>>>>> e3162040c4ca89c9532b2f9a61d97708d2d65427
             default :
                 $used_controller = "UserController";
                 break;
@@ -64,6 +75,25 @@ if (isset($_SESSION["user"])) {
             case "xoa-san-pham":
                 $action="deleteProduct";
                 break;
+<<<<<<< HEAD
+            case "sale":
+                $action="index";
+                break;
+            case "add-sale":
+                $action = "create";
+                break;
+            case "store-sale":
+                $action = "store";
+                break;
+            case "edit-sale":
+                $action = "edit";
+                break;
+            case "update-sale":
+                $action = "update";
+                break;
+            case "delete-sale":
+                $action = "delete";
+=======
             case "hang":
                 $action="listProducess";
                 break;
@@ -75,6 +105,7 @@ if (isset($_SESSION["user"])) {
                 break;
             case "xoa-hang":
                 $action="deleteProducess";
+>>>>>>> e3162040c4ca89c9532b2f9a61d97708d2d65427
                 break;
             default :
                 $action = $page;
