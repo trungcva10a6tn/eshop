@@ -26,7 +26,6 @@ if (isset($_SESSION["user"])) {
             case "xoa-san-pham":
                 $used_controller="ProductController";
                 break;
-
             case "sale":
             case "store-sale":
             case "add-sale":

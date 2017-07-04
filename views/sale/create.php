@@ -1,5 +1,5 @@
-<div class="add_product">
-    <form method="post" action="index.php?page=store-sale">
+<div class="add_user">
+    <form method="post" action="?page=store-sale">
         <fieldset>
             <legend>Create Sale</legend>
             <div class="new_input">
@@ -17,21 +17,19 @@
             
             <div class="new_input">
                 <label>Start Day: </label>
-                <input type="text" name="start-day" value="">
+                <input type="date" name="start-day" value="">
             </div>
             <div class="new_input">
                 <label>Finish Day: </label>
-                <input type="text" name="finish-day" value="">
+                <input type="date" name="finish-day" value="">
             </div>
-            <div>
-                <input type="radio" name="type" value="1">
-                <label>All</label>
-                <input type="radio" name="type" value="2">
-                <label>Category</label>
-                <input type="radio" name="type" value="3">
-                <label>Product</label>
+            <div >
+                <label><input type="radio" name="type" value="1"/> All </label>
+                <label><input type="radio" name="type" value="2"/> Category </label>
+                <label><input type="radio" name="type" value="3"/> Product  </label>
             </div>
             <button type="submit" name="add">Create</button>
+            <button type="button" onclick="location.href='?page=hang'">Thoát</button>
         </fieldset>
     </form>
 </div>

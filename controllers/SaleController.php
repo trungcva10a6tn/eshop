@@ -1,14 +1,6 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: duong
- * Date: 6/30/17
- * Time: 10:38 AM
- */
 require_once 'Controller.php';
-require_once './models/SaleModel.php';
-
+require_once 'models/SaleModel.php';
 class SaleController extends Controller
 {
     public function index(){
@@ -32,8 +24,7 @@ class SaleController extends Controller
                 "type" => $_POST["type"],
                 'percentage' => $_POST["percent"],
                 "start_day" => date('Y-m-d', strtotime($_POST["start-day"])),
-                "end_day" => date('Y-m-d', strtotime($_POST["finish-day"])),
-                "delete_sale" => 1,
+                "end_day" => date('Y-m-d', strtotime($_POST["finish-day"]))
             );
             $model = new SaleModel();
             $model->addSale($data);

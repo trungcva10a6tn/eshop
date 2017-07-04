@@ -1,4 +1,4 @@
-<div class="add_product">
+<div class="add_user ">
     <form method="post">
         <fieldset>
             <legend><?= ($_GET['page'] == "sua-san-pham" ?"Sửa sản phẩm ": "Thêm sản phẩm")?></legend>
