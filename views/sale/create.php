@@ -24,12 +24,12 @@
                 <input type="text" name="finish-day" value="">
             </div>
             <div>
-                <label>All</label>
                 <input type="radio" name="type" value="1">
-                <label>Category</label>
+                <label>All</label>
                 <input type="radio" name="type" value="2">
-                <label>Product</label>
+                <label>Category</label>
                 <input type="radio" name="type" value="3">
+                <label>Product</label>
             </div>
             <button type="submit" name="add">Create</button>
         </fieldset>

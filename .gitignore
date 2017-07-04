@@ -1,4 +1,4 @@
-*.DS_Store
 models/Config.php
 nbproject/private/
-.idea/
+.idea
+.idea/*
