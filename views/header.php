@@ -25,13 +25,8 @@
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Users</b></div>
         <div onclick="location.href='?page=san-pham'"><b>Quản Lý Sản Phẩm</b></div>
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Hóa Đơn</b></div>
-<<<<<<< HEAD
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Hãng</b></div>
         <div onclick="location.href='?page=sale'"><b>Quản Đợt Giảm Giá</b></div>
-=======
-        <div onclick="location.href='?page=hang'"><b>Quản Lý Hãng</b></div>
-        <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Đợt Giảm Giá</b></div>
->>>>>>> e3162040c4ca89c9532b2f9a61d97708d2d65427
     </div>
 </div>
 </body>

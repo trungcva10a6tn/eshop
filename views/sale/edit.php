@@ -25,12 +25,12 @@
                 <input type="text" name="finish-day" value="<?= date('d-m-Y',strtotime($data['end_day'])) ?>">
             </div>
             <div>
-                <label>All</label>
                 <input type="radio" name="type" value="1" <?= $data['type'] == 1?'checked':'' ?>>
-                <label>Category</label>
+                <label>All</label>
                 <input type="radio" name="type" value="2" <?= $data['type'] == 2?'checked':'' ?>>
-                <label>Product</label>
+                <label>Category</label>
                 <input type="radio" name="type" value="3" <?= $data['type'] == 3?'checked':'' ?>>
+                <label>Product</label>
             </div>
             <button type="submit" name="update">Update</button>
         </fieldset>
