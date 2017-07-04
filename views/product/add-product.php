@@ -1,4 +1,4 @@
-<div class="add_product">
+<div class="add_user ">
     <form method="post">
         <fieldset>
             <legend><?= ($_GET['page'] == "sua-san-pham" ?"Sửa sản phẩm ": "Thêm sản phẩm")?></legend>
@@ -54,10 +54,7 @@
                     ?>
                 </select>
             </div>
-<<<<<<< HEAD
-=======
             <button type="button" onclick="location.href='?page=san-pham'">Thoát</button>
->>>>>>> e3162040c4ca89c9532b2f9a61d97708d2d65427
             <button type="submit" name="sen_add"><?= $_GET["page"]=="sua-san-pham"?"Cập Nhật":"Thêm"?></button>
         </fieldset>
     </form>
