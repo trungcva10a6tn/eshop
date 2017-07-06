@@ -9,13 +9,7 @@ require_once "model.php";
 class BillModel extends Model
 {
     function listBill(){
-        $db=$this->where("bills",array("delete_user"=> 1));
-        /*if(isset($options['limit'])){
-            $db->where();
-        }
-        if(isset($options['range'])){
-
-        }*/
+        $db=$this->where("bills",array("delete_bill"=> 1));
         $db=$this->getdb($db);
         return $db;
     }

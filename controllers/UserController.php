@@ -2,8 +2,9 @@
 require_once "models/UserModel.php";
 require_once "Controller.php";
 class UserController extends Controller{
+    private $erro=[];
     function listUser(){
-        if (isset($_POST["find-search"])){
+        if (isset($_POST["find-search"])&&strlen($_POST["search"])>0){
             $data=$this->db("UserModel");
             $data=$data->getsearch();
         }else{
@@ -33,6 +34,9 @@ class UserController extends Controller{
         }
         $this->view("header");
         $this->view("user/add-user",null, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
     function editUser(){
         if (isset($_POST["sen_add"])){
@@ -40,7 +44,7 @@ class UserController extends Controller{
                 $data="";
                 $data=array(
                     "user_name"=>$_POST["user_name"],
-                    "password"=>strlen($_POST["password_2"])>0?md5(md5($_POST["user_name"]).md5($_POST["password_2"])):"",
+                    "password"=>strlen($_POST["password_2"])>0?md5(md5($_POST["user_name"]).md5($_POST["password_2"])):null,
                     "full_name"=>$_POST["full_name"],
                     "address"=>$_POST["address"],
                     "email"=>$_POST["email"],
@@ -59,6 +63,9 @@ class UserController extends Controller{
         }
         $this->view("header");
         $this->view("user/add-user",isset($data_user)?$data_user:null, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
     function deleteUser(){
         if (isset($_POST["delete"])){
@@ -78,30 +85,37 @@ class UserController extends Controller{
     }
     function checkData($data){
        if (!preg_match("/^[a-zA-Z]\w{1,}$/", $data['user_name']) || strlen($data['user_name']) < 5){
-           echo "lỗi tên";
+           $this->erro["type"]=1;
+           $this->erro["mes"]="Lỗi Tên sai cú pháp";
             return false;
        }
        if (strlen($data['password_1']) === 0 && strlen($data['password_1']) === 0 && $_GET["page"] == "sua-thanh-vien"){
 
        }else{
            if ($data['password_1'] !== $data['password_2'] || !preg_match("/^.{5,}$/", $data['password_1'])){
-               echo "lỗi pass";
+               $this->erro["type"]=1;
+               $this->erro["mes"]="Lỗi Mật Khấu Không Đúng ";
                return false;
            }
        }
        if ( strlen($data['full_name']) < 5 ){
+           $this->erro["type"]=1;
+           $this->erro["mes"]="Lỗi Tên Đầy Đủ quá Ngắn";
             return false;
         }
         if (!preg_match("/^[a-zA-Z]{1}\w{1,}@\w{3,5}\.\w{3,5}$/", $data['email']) || strlen($data['email']) < 10){
-            echo "lỗi email";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Email";
             return false;
         }
-        if (!preg_match("/^[+84|0]{1,3}[0-9]{9,11}$/", $data['phone']) || strlen($data['phone']) < 10){
-            echo "lỗi phone";
+        if (!preg_match("/^[\+84|0]{1,3}[0-9]{9,11}$/", $data['phone'])){
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Số Điện Thoại";
             return false;
         }
         if (!preg_match("/^[1-3]{1}$/", $data['admin'])){
-            echo "lỗi phone";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Quyền";
             return false;
         }
         return true;

@@ -1,5 +1,5 @@
-<div class="add_product">
-    <form method="post" action="index.php?page=update-sale">
+<div class="add_user">
+    <form method="post" action="list-sale.php?page=update-sale">
         <fieldset>
             <legend>Edit Sale</legend>
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
@@ -24,7 +24,7 @@
                 <label>Finish Day: </label>
                 <input type="text" name="finish-day" value="<?= date('d-m-Y',strtotime($data['end_day'])) ?>">
             </div>
-            <div>
+            <div class="new_check">
                 <input type="radio" name="type" value="1" <?= $data['type'] == 1?'checked':'' ?>>
                 <label>All</label>
                 <input type="radio" name="type" value="2" <?= $data['type'] == 2?'checked':'' ?>>

@@ -1,4 +1,4 @@
-function load_img( d) {
+function load_img(d) {
     this.url = document.getElementsByClassName(d);
     this.doing=0;
     this.next= function () {

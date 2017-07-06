@@ -1,8 +1,10 @@
 <div class="list_user">
     <div class="search">
-        <form>
-            <input type="text">
-            <button>Tìm</button>
+        <form method="post">
+            <div class="search-boder">
+                <input class="search-input" type="text" name="search" value="<?= isset($_POST["search"])?$_POST["search"]:""?>"/>
+                <button class="search-button" type="submit" name="find-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
         </form>
     </div>
     <div class="header_conten">Quản Lý Sale</div>

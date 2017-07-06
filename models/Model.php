@@ -65,12 +65,13 @@ class Model extends Config {
         $query = "INSERT INTO $table ($colum) VALUES ($string)";
         $db = $this->connectdb();
         $db->exec($query);
+        return $db;
     }
     protected function edit($table,$data,$where=array()){
         $where_update="";
         $stt2=0;
         foreach ($where as $key=>$value){
-            if ($value !== ""){
+            if ($value != null){
                 $where_update.= $stt2==0 ? $key."='".$value."'" : ",".$key."='".$value."'";
             }
             $stt2+=1;
@@ -78,7 +79,9 @@ class Model extends Config {
         $string="";
         $stt=0;
         foreach ($data as $key=>$value){
-            $string.= $stt==0 ? "`".$key."`"."='".$value."'" : ", "."`".$key."`"."= '".$value."'";
+            if ($value != null){
+                $string.= $stt==0 ? "`".$key."`"."='".$value."'" : ", "."`".$key."`"."= '".$value."'";
+            }
             $stt+=1;
         }
         $query = "UPDATE $table SET $string WHERE $where_update";

@@ -3,18 +3,42 @@ require_once 'Controller.php';
 require_once 'models/SaleModel.php';
 class SaleController extends Controller
 {
-    public function index(){
-        $model = new SaleModel();
-        $sale = $model->getAllSale();
+    private $erro=[];
+    public function listSale(){
+        if (isset($_POST["find-search"])&&strlen($_POST["search"])>0){
+            $data=$this->db("SaleModel");
+            $data=$data->getsearch();
+        }else{
+            $data=$this->db("SaleModel");
+            $data=$data->getAllSale();
+        }
         $this->view('header');
-        $this->view('sale/index', $sale);
+        $this->view('sale/list-sale', $data);
     }
     
-    public function create(){
+    public function addSale(){
+        if (isset($_POST["sen_add"])){
+            if ($this->checkData($_POST)){
+                $data="";
+                $data=array(
+                    "name_sale" => $_POST["name_sale"],
+                    "content_sale" => $_POST["content"],
+                    "type" => $_POST["type"],
+                    'percentage' => $_POST["percent"],
+                    "start_day" => date('Y-m-d', strtotime($_POST["start-day"])),
+                    "end_day" => date('Y-m-d', strtotime($_POST["finish-day"]))
+                );
+                $db=$this->db("SaleModel");
+                $db->addSale($data);
+                header('Location: ?page=sale');
+            }
+        }
         $this->view('header');
-        $this->view('sale/create');
+        $this->view('sale/add-edit',null, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
-    
     public function store(){
         if(isset($_POST['add'])){
             $data = array();

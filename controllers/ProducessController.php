@@ -18,7 +18,7 @@ class ProducessController extends Controller{
                     "name_produces"=>$_POST["name_produces"]
                 );
                 $db=$this->db("ProducessModel");
-                $db->addUser($data);
+                $db->addProducess($data);
                 header('Location: ?page=hang');
             }
         }
@@ -26,10 +26,22 @@ class ProducessController extends Controller{
         $this->view("producess/add-produces",null, isset($_POST["sen_add"])? $_POST: null);
     }
     function editProducess(){
-        $data=$this->db("ProducessModel");
-        $data=$data->listProducess();
+        if (isset($_POST["sen_add"])){
+            if ($this->checkData($_POST)){
+                $data="";
+                $data=array(
+                    "name_produces"=>$_POST["name_produces"]
+                );
+                $db=$this->db("ProducessModel");
+                $db->editProducess($data);
+                header('Location: ?page=hang');
+            }
+        }else{
+            $data=$this->db("ProducessModel");
+            $data=$data->getProducess($_GET["id"])[0];
+        }
         $this->view("header");
-        $this->view("producess/add-produces",$data);
+        $this->view("producess/add-produces",isset($data)?$data:null, isset($_POST["sen_add"])? $_POST: null);
     }
     function deleteProducess(){
         if (isset($_POST["delete"])){
@@ -37,7 +49,7 @@ class ProducessController extends Controller{
                 "delete_produces"=>0
             );
             $db=$this->db("ProducessModel");
-            $db->editUser($data);
+            $db->editProducess($data);
             header('Location: ?page=hang');
         }
         $data_produces="";
