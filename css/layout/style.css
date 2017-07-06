@@ -1,0 +1,157 @@
+
+#logo-img{
+	margin-left: 10px;
+	margin-top: 10px;
+	width: 100px;
+}
+#banner{
+	background-color: #0f0f0f;
+}
+.item-menu{
+	padding: 15px;
+	text-decoration: none;
+}
+.item-menu a {
+	color: #ffffff;
+}
+.item-sub-menu {
+	background-color: #0f0f0f;
+}
+.item-sub-menu a:hover{
+	color: grey;
+	background-color: #0f0f0f;
+}
+.item-sub-menu a{
+	color: #ffffff !important;
+}
+.item-sub-menu a:hover{
+	color: grey !important;
+	background-color: #0f0f0f !important;
+}
+.navbar-fixed {
+	top: 0;
+	z-index: 100;
+	position: fixed;
+	width: 100%;
+}
+.tech_news ul{
+	padding: 0;
+}
+.tech_news li{
+	margin-top: 15px;
+}
+.tech_news li a{
+ 	display: block;
+	overflow: hidden;
+	text-decoration: none;
+}
+.tech_news li img{
+	float: right;
+	width: 100px;
+	height: 57px;
+	margin-left: 10px;
+}
+.flip p{
+	float: left;
+	color: blue;
+	font-weight: bold;
+}
+.flip h3{
+	display: block;
+	line-height: 1.3em;
+	font-size: 16px;
+	color: #333;
+	font-weight: 600;
+	margin: 0 10px 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.flip strong{
+	float: left;
+	font-size: 14px;
+	color: #c10017;
+	margin: 0 9px 5px;
+}
+.featured{
+	margin-top: 40px;
+}
+
+.iconacc-pinsac{
+	background-position: -20px 0;
+	width: 25px;
+	height: 28px;
+	margin-top: 15px;
+	background-image: url("../../img/iconpk_desktop@1x.png");
+	display: inline-block;
+}
+.iconacc-sacday{
+	background-position: -50px 0;
+	width: 27px;
+	height: 27px;
+	margin-top: 12px;
+	background-image: url("../../img/iconpk_desktop@1x.png");
+	display: inline-block;
+}
+.iconacc-tainghe{
+	background-position: -105px 0;
+	width: 22px;
+	height: 22px;
+	margin-top: 15px;
+	background-image: url("../../img/iconpk_desktop@1x.png");
+	display: inline-block;
+}
+.iconacc-chuot{
+	background-position: -40px -35px;
+	width: 17px;
+	height: 30px;
+	margin-top: 11px;
+	background-image: url("../../img/iconpk_desktop@1x.png");
+	display: inline-block;
+}
+.iconacc-oplung{
+	background-position: 0 0;
+	width: 18px;
+	height: 28px;
+	margin-top: 11px;
+	background-image: url("../../img/iconpk_desktop@1x.png");
+	display: inline-block;
+}
+.iconacc-pkkhac{
+	background-position: -100px -35px;
+	width: 28px;
+	height: 27px;
+	margin-top: 12px;
+	background-image: url("../../img/iconpk_desktop@1x.png");
+	display: inline-block;
+}
+h5{
+	display: inline-block;
+}
+h5:hover{
+	color: red;
+}
+.footer{
+	height: 200px;
+	margin-top: 40px;
+}
+.footer p{
+	float: left;
+	margin-left: 50px;
+}
+.icon img{
+	float: right;
+	margin-right: 40px;
+}
+.footer-left a{
+	margin-left: 65px;
+	padding-bottom: 20px;
+	display: block;
+	text-decoration: none;
+}
+.footer-center a{
+	display: block;
+	text-decoration: none;
+	padding-bottom: 20px;
+	margin-left: 80px;
+}

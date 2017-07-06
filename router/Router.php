@@ -110,6 +110,6 @@ if (isset($_SESSION["user"])) {
         RouterPage("UserController", "listUser");
     }
 } else {
-    RouterPage("LoginController", "login");
+    RouterPage("ClientController", "listAll");
 }
 ?>
