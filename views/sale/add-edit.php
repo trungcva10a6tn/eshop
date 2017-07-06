@@ -28,8 +28,8 @@
                 <label><input type="radio" name="type" value="2"/> Category </label>
                 <label><input type="radio" name="type" value="3"/> Product  </label>
             </div>
-            <button type="submit" name="add">Create</button>
-            <button type="button" onclick="location.href='?page=hang'">Thoát</button>
+            <button type="submit" name="add">Thêm</button>
+            <button type="button" onclick="location.href='?page=sale'">Next</button>
         </fieldset>
     </form>
 </div>
