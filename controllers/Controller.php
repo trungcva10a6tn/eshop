@@ -6,8 +6,8 @@ class Controller {
         require_once "views/" . $url . ".php";
     }
 
-    public function db($database) {
-        $conectdb = new $database();
+    public function db($model_db) {
+        $conectdb = new $model_db();
         return $conectdb;
     }
 

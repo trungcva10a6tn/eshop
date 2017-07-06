@@ -8,7 +8,17 @@ class SaleModel extends Model
         $sales = $this->getdb($sales);
         return $sales;
     }
-    
+    function getsearch(){
+        $db=$this->like("users",array(
+            "(name_sale"=>" LIKE '%".$_POST["search"]."%'",
+            "content_sale"=>" LIKE '%".$_POST["search"]."%'",
+            "percentage"=>" LIKE '%".$_POST["search"]."%'",
+            "start_day"=>" LIKE '%".$_POST["search"]."%'",
+            "end_day"=>" LIKE '%".$_POST["search"]."%') AND delete_sale='1'"
+        ));
+        $db=$this->getdb($db);
+        return $db;
+    }
     public function getSaleById($id){
         $sale = $this->where('sales', ['id' => $id]);
         $sale = $this->getdb($sale);

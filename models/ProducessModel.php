@@ -6,15 +6,16 @@ class ProducessModel extends Model{
         $db=$this->getdb($db);
         return $db;
     }
-    function getIdUser($id){
+    function getProducess($id){
         $db=$this->where("producess",array("id"=>$id));
         $db=$this->getdb($db);
         return $db;
     }
-    function addUser($data){
-        $this->add("producess",$data);
+    function addProducess($data){
+        $db=$this->add("producess",$data);
+        return $db;
     }
-    function editUser($data){
+    function editProducess($data){
         $this->edit("producess",$data,array("id"=>$_GET["id"]));
     }
 

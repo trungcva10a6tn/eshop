@@ -8,7 +8,7 @@
             </div>
             <div class="new_input">
                 <label>Content :</label>
-                <textarea placeholder="Nội dung sale" name="content"></textarea>
+                <textarea placeholder="Nội dung sale" name="content" rows="4"></textarea>
             </div>
             <div class="new_input">
                 <label>Percent(%): </label>

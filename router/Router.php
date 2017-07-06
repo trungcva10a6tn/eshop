@@ -27,10 +27,8 @@ if (isset($_SESSION["user"])) {
                 $used_controller="ProductController";
                 break;
             case "sale":
-            case "store-sale":
             case "add-sale":
             case "edit-sale":
-            case "update-sale":
             case "delete-sale":
                 $used_controller="SaleController";
                 break;
@@ -38,8 +36,14 @@ if (isset($_SESSION["user"])) {
             case "them-hang":
             case "sua-hang":
             case "xoa-hang":
-            $used_controller="ProducessController";
-            break;
+                $used_controller="ProducessController";
+                break;
+            case "hoa-don":
+            case "them-hoa-don":
+            case "sua-hoa-don":
+            case "xoa-hoa-don":
+                $used_controller="BillController";
+                break;
             default :
                 $used_controller = "UserController";
                 break;
@@ -73,22 +77,17 @@ if (isset($_SESSION["user"])) {
                 $action="deleteProduct";
                 break;
             case "sale":
-                $action="index";
+                $action="listSale";
                 break;
             case "add-sale":
                 $action = "create";
                 break;
-            case "store-sale":
-                $action = "store";
-                break;
             case "edit-sale":
                 $action = "edit";
                 break;
-            case "update-sale":
-                $action = "update";
-                break;
             case "delete-sale":
                 $action = "delete";
+                break;
             case "hang":
                 $action="listProducess";
                 break;
@@ -100,6 +99,18 @@ if (isset($_SESSION["user"])) {
                 break;
             case "xoa-hang":
                 $action="deleteProducess";
+                break;
+            case "hoa-don":
+                $action="listBill";
+                break;
+            case "them-hoa-don":
+                $action="addBill";
+                break;
+            case "sua-hoa-don":
+                $action="editBill";
+                break;
+            case "xoa-hoa-don":
+                $action="deleteBill";
                 break;
             default :
                 $action = $page;
