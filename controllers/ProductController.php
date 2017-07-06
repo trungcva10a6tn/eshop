@@ -6,8 +6,7 @@ class ProductController extends Controller
     function listAllProduct(){
         $db= $this->db("ProductModel");
         $data = $db->ListProductdb();
-        $this->view('header');
-        $this->view('product/list-product',$data);
+        $this->view('layout',$data);
     }
 
     
