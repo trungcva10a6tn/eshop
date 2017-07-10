@@ -3,11 +3,12 @@ require_once 'models/ProductModel.php';
 require_once 'Controller.php';
 class ProductController extends Controller
 {
+    private $erro=[];
     function listAllProduct(){
-    $db= $this->db("ProductModel");
-    $data = $db->ListProductdb();
-    $this->view("header");
-    $this->view("product/list-product",$data);
+        $db= $this->db("ProductModel");
+        $data = $db->ListProductdb();
+        $this->view("header");
+        $this->view('product/list-product',$data);
     }
     function addProduct(){
         if (isset($_POST["sen_add"])){
@@ -36,6 +37,9 @@ class ProductController extends Controller
         $datafull_product[1] = $dataProducess;
         $this->view("header");
         $this->view("product/add-product",$datafull_product, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
 
     function editProduct(){
@@ -71,6 +75,9 @@ class ProductController extends Controller
         }
         $this->view("header");
         $this->view("product/add-product",isset($datafull_product)?$datafull_product:null, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
     function deleteProduct(){
         if (isset($_POST["delete"])){
@@ -90,41 +97,45 @@ class ProductController extends Controller
     }
     function checkData($data){
         if (!preg_match("/^.{5,}$/", $data['name']) || strlen($data['name']) < 5){
-            echo "lỗi tên";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Tên Sản Phẩm";
             return false;
         }
         if (!preg_match("/^.{5,}/", $data['screen']) || strlen($data['screen']) < 5){
-            echo "lỗi screen";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Màn Hình";
             return false;
         }
         if (!preg_match("/^.{5,}/", $data['operating_system']) || strlen($data['operating_system']) < 5){
-            echo "lỗi operating_system";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Hệ Điều Hành";
             return false;
         }
         if (!preg_match("/.{5,50}/", $data['CPU']) || strlen($data['CPU']) < 5){
-            echo "lỗi CPU";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng CPU";
             return false;
         }
         if (!preg_match("/.{3,50}/", $data['RAM']) || strlen($data['RAM']) < 3){
-            echo "lỗi RAM";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Ram";
             return false;
         }
         if (!preg_match("/.{5,50}/", $data['memory']) || strlen($data['memory']) < 5){
-            echo "lỗi memory";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Memory";
             return false;
         }
         if (!preg_match("/.{5,50}/", $data['pin']) || strlen($data['pin']) < 5){
-            echo "lỗi pin";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Pin";
             return false;
         }
         if (!preg_match("/^[1-9]{1}[0-9]{3,}/", $data['price']) || strlen($data['price']) < 5){
-            echo "lỗi price";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Giá";
             return false;
         }
-//        if (!preg_match("/.{5,50}/", $data['screen']) || strlen($data['screen']) < 5){
-//            echo "lỗi screen";
-//            return false;
-//        }
         return true;
     }
 }

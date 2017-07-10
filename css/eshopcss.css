@@ -145,11 +145,17 @@ fieldset>button{
     color: red;
 }
 .search-input, .search-button{
-    font-size: 1em;
+    font-size: 0.9em;
     outline: none;
     border: none;
     background: none;
 }
 .admin_info{
-    float: right;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    color: white;
+}
+.admin_info p{
+    display: inline-block;
 }

@@ -23,12 +23,12 @@
                 <label>Finish Day: </label>
                 <input type="date" name="finish-day" value="">
             </div>
-            <div >
+            <div>
                 <label><input type="radio" name="type" value="1"/> All </label>
                 <label><input type="radio" name="type" value="2"/> Category </label>
                 <label><input type="radio" name="type" value="3"/> Product  </label>
             </div>
-            <button type="submit" name="add">Create</button>
+            <button type="submit" name="add">Thêm</button>
             <button type="button" onclick="location.href='?page=hang'">Thoát</button>
         </fieldset>
     </form>
