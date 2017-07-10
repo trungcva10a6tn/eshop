@@ -26,10 +26,10 @@ if (isset($_SESSION["user"])) {
             case "xoa-san-pham":
                 $used_controller="ProductController";
                 break;
-            case "sale":
-            case "add-sale":
-            case "edit-sale":
-            case "delete-sale":
+            case "dot-giam-gia":
+            case "them-dot-giam-gia":
+            case "sua-dot-giam-gia":
+            case "xoa-dot-giam-gia":
                 $used_controller="SaleController";
                 break;
             case "hang":
@@ -76,17 +76,17 @@ if (isset($_SESSION["user"])) {
             case "xoa-san-pham":
                 $action="deleteProduct";
                 break;
-            case "sale":
+            case "dot-giam-gia":
                 $action="listSale";
                 break;
             case "add-sale":
-                $action = "create";
+                $action = "addSale";
                 break;
-            case "edit-sale":
-                $action = "edit";
+            case "sua-dot-giam-gia":
+                $action = "editSale";
                 break;
-            case "delete-sale":
-                $action = "delete";
+            case "xoa-dot-giam-gia":
+                $action = "deleteSale";
                 break;
             case "hang":
                 $action="listProducess";

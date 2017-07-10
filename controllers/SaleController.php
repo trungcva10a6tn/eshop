@@ -25,8 +25,8 @@ class SaleController extends Controller
                     "content_sale" => $_POST["content"],
                     "type" => $_POST["type"],
                     'percentage' => $_POST["percent"],
-                    "start_day" => date('Y-m-d', strtotime($_POST["start-day"])),
-                    "end_day" => date('Y-m-d', strtotime($_POST["finish-day"]))
+                    "start_day" => $_POST["start-day"],
+                    "end_day" => $_POST["finish-day"]
                 );
                 $db=$this->db("SaleModel");
                 $db->addSale($data);
@@ -39,24 +39,7 @@ class SaleController extends Controller
             $this->view("erro-all",$this->erro);
         }
     }
-    public function store(){
-        if(isset($_POST['add'])){
-            $data = array();
-            $data=array(
-                "name_sale" => $_POST["name_sale"],
-                "content_sale" => $_POST["content"],
-                "type" => $_POST["type"],
-                'percentage' => $_POST["percent"],
-                "start_day" => date('Y-m-d', strtotime($_POST["start-day"])),
-                "end_day" => date('Y-m-d', strtotime($_POST["finish-day"]))
-            );
-            $model = new SaleModel();
-            $model->addSale($data);
-            header('Location: ?page=sale');
-        }
-    }
-
-    public function edit(){
+    public function editSale(){
         $id = $_GET['id'];
         $sale = array();
         $model = new SaleModel();
@@ -65,7 +48,7 @@ class SaleController extends Controller
         $this->view('sale/edit', $sale[0]);
     }
     
-    public function update(){
+    public function updateSale(){
         if(isset($_POST['update'])){
             $id = $_POST['id'];
             $data = array();
@@ -84,10 +67,13 @@ class SaleController extends Controller
         }
     }
     
-    public function delete(){
+    public function deleteSale(){
         $id = $_GET['id'];
         $model = new SaleModel();
         $model->deleteSale(['delete_sale' => 0], ['id' => $id]);
         header('Location: ?page=sale');
+    }
+    public function checkData($data){
+        return true;
     }
 }

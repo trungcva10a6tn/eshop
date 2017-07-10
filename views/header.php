@@ -28,7 +28,7 @@
         <div onclick="location.href='?page=san-pham'"><b>Quản Lý Sản Phẩm</b></div>
         <div onclick="location.href='?page=hoa-don'"><b>Quản Lý Hóa Đơn</b></div>
         <div onclick="location.href='?page=hang'"><b>Quản Lý Hãng</b></div>
-        <div onclick="location.href='?page=sale'"><b>Quản Lý Đợt Giảm Giá</b></div>
+        <div onclick="location.href='?page=dot-giam-gia'"><b>Quản Lý Đợt Giảm Giá</b></div>
     </div>
 </div>
 </body>
