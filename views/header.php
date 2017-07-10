@@ -15,14 +15,12 @@
     TRANG QUẢN LÝ
 </div>
 <div class="admin_info">
-    <img src="" alt="">
     <div>
+        <p> <?= $_SESSION["full_name"]?></p>
         <a href="?page=logout">Log Out</a>
     </div>
 </div>
 <div class="control">
-    <div class="name_admin"></div>
-
     <div class="menu">
         <div onclick="location.href='?page=thanh-vien'"><b>Quản Lý Thành Viên</b></div>
         <div onclick="location.href='?page=san-pham'"><b>Quản Lý Sản Phẩm</b></div>

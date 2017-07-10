@@ -5,7 +5,7 @@ function RouterPage($controller, $url) {
     $view->$url();
 }
 session_start();
-if (isset($_SESSION["user"])) {
+if (isset($_SESSION["id_user"])) {
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         $used_controller = "";
@@ -121,6 +121,6 @@ if (isset($_SESSION["user"])) {
         RouterPage("UserController", "listUser");
     }
 } else {
-    RouterPage("ClientController", "listAll");
+    RouterPage("LoginController", "login");
 }
 ?>

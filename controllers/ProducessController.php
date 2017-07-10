@@ -2,6 +2,7 @@
 require_once "models/ProducessModel.php";
 require_once "Controller.php";
 class ProducessController extends Controller{
+    private $erro=[];
     function listProducess(){
         if (isset($_POST["login_new"])){
         }
@@ -24,6 +25,9 @@ class ProducessController extends Controller{
         }
         $this->view("header");
         $this->view("producess/add-produces",null, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
     function editProducess(){
         if (isset($_POST["sen_add"])){
@@ -42,6 +46,9 @@ class ProducessController extends Controller{
         }
         $this->view("header");
         $this->view("producess/add-produces",isset($data)?$data:null, isset($_POST["sen_add"])? $_POST: null);
+        if (isset($this->erro["type"])){
+            $this->view("erro-all",$this->erro);
+        }
     }
     function deleteProducess(){
         if (isset($_POST["delete"])){
@@ -61,7 +68,8 @@ class ProducessController extends Controller{
     }
     function checkData($data){
         if (!preg_match("/^.{5,}$/", $data['name_produces'])){
-            echo "lỗi tên";
+            $this->erro["type"]=1;
+            $this->erro["mes"]="Lỗi Định Dạng Tên";
             return false;
         }
         return true;

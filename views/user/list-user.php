@@ -49,6 +49,6 @@
             }
             ?>
         </table>
-        <button class="bnt_add" onclick="location.href = '?page=them-thanh-vien'">Xóa</button>
+<!--        <button class="bnt_add" onclick="location.href = '?page=them-thanh-vien'">Xóa</button>-->
     </div>
 </div>

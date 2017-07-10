@@ -35,6 +35,6 @@
             }
             ?>
         </table>
-        <button class="bnt_add" onclick="location.href = '?page=xoa-hang'">Xóa</button>
+<!--        <button class="bnt_add" onclick="location.href = '?page=xoa-hang'">Xóa</button>-->
     </div>
 </div>
