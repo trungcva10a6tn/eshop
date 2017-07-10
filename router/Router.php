@@ -44,6 +44,9 @@ if (isset($_SESSION["id_user"])) {
             case "xoa-hoa-don":
                 $used_controller="BillController";
                 break;
+            case "view-san-pham":
+                $used_controller="ClientController";
+                break;
             default :
                 $used_controller = "UserController";
                 break;
@@ -111,6 +114,9 @@ if (isset($_SESSION["id_user"])) {
                 break;
             case "xoa-hoa-don":
                 $action="deleteBill";
+                break;
+            case "view-san-pham":
+                $action="listAll";
                 break;
             default :
                 $action = $page;
