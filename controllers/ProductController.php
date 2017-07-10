@@ -4,12 +4,11 @@ require_once 'Controller.php';
 class ProductController extends Controller
 {
     function listAllProduct(){
-        $db= $this->db("ProductModel");
-        $data = $db->ListProductdb();
-        $this->view('layout',$data);
+    $db= $this->db("ProductModel");
+    $data = $db->ListProductdb();
+    $this->view("header");
+    $this->view("product/list-product",$data);
     }
-
-    
     function addProduct(){
         if (isset($_POST["sen_add"])){
             if ($this->checkData($_POST)){
